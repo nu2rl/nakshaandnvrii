@@ -31,13 +31,13 @@ export default function Hero({ onConsult }: { onConsult: () => void }) {
   const lines = hero.titleLines;
 
   return (
-    <section ref={ref} id="top" className="relative isolate min-h-[100svh] overflow-hidden">
+    <section ref={ref} id="top" className="relative isolate min-h-[100svh] overflow-hidden will-change-transform">
       {/* Background image with Ken Burns Effect */}
-      <motion.div style={{ y: yImg, scale: 1.15 }} className="absolute inset-0 -z-10 origin-top">
+      <motion.div style={{ y: yImg, scale: 1.15 }} className="absolute inset-0 -z-10 origin-top will-change-transform">
         <motion.div
-          animate={{ scale: [1, 1.08] }}
-          transition={{ duration: 30, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-          className="relative h-full w-full"
+          animate={{ scale: [1, 1.05] }}
+          transition={{ duration: 40, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
+          className="relative h-full w-full will-change-transform"
         >
           <Image
             src={hero.image}
@@ -51,10 +51,10 @@ export default function Hero({ onConsult }: { onConsult: () => void }) {
         
         <motion.div
           style={{ opacity: opacityVeil }}
-          className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/30 to-bg"
+          className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/30 to-bg will-change-opacity"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/85 via-50% to-transparent" />
-        <div className="grain" />
+        <div className="grain hidden md:block" />
       </motion.div>
 
       {/* Large Watermark Text */}
