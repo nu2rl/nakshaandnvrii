@@ -32,8 +32,8 @@ export default function Hero({ onConsult }: { onConsult: () => void }) {
 
   return (
     <section ref={ref} id="top" className="relative isolate min-h-[100svh] overflow-hidden will-change-transform">
-      {/* Background image with Ken Burns Effect */}
-      <motion.div style={{ y: yImg, scale: 1.15 }} className="absolute inset-0 -z-10 origin-top will-change-transform">
+      {/* Desktop Background: Parallax and Ken Burns */}
+      <motion.div style={{ y: yImg, scale: 1.15 }} className="absolute inset-0 -z-10 origin-top will-change-transform hidden md:block">
         <motion.div
           animate={{ scale: [1, 1.05] }}
           transition={{ duration: 40, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
@@ -54,8 +54,25 @@ export default function Hero({ onConsult }: { onConsult: () => void }) {
           className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/30 to-bg will-change-opacity"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/85 via-50% to-transparent" />
-        <div className="grain hidden md:block" />
+        <div className="grain" />
       </motion.div>
+
+      {/* Mobile Background: Completely static to prevent lag */}
+      <div className="absolute inset-0 -z-10 origin-top block md:hidden">
+        <div className="relative h-full w-full">
+          <Image
+            src={hero.image}
+            alt="Hero interior"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-bg/30 to-bg opacity-[0.8]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg via-bg/85 via-50% to-transparent" />
+      </div>
 
       {/* Large Watermark Text */}
       <motion.div
