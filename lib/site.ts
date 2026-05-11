@@ -55,7 +55,7 @@ export const site = {
     },
   },
   hero: {
-    titleLines: ["Deepak Homes", "Comforting Interiors for"],
+    titleLines: ["Beautiful Homes", "Comforting Interiors for"],
     titleAccent: "Modern India",
     sub:
       "We are the top-rated interior design studio in Gwalior. Led by Atul Shrivastava, we design and build premium, pocket-friendly homes with a personal touch.",
