@@ -36,7 +36,7 @@ export default function Hero({ onConsult }: { onConsult: () => void }) {
       <motion.div style={{ y: yImg, scale: 1.15 }} className="absolute inset-0 -z-10 origin-top">
         <motion.div
           animate={{ scale: [1, 1.08] }}
-          transition={{ duration: 30, repeat: Infinity, repeatType: "alternate", ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
           className="relative h-full w-full"
         >
           <Image
